@@ -2,14 +2,14 @@
 // import * as THREE from 'three'
 import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js'
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-// import * as dat from 'dat.gui'
+import * as dat from 'dat.gui'
 
 // Texture Loader
 const loader = new THREE.TextureLoader()
 const cross = loader.load('./death-star.png')
 
 // Debug
-// const gui = new dat.GUI()
+const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')

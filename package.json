@@ -2,7 +2,6 @@
   "name": "particles",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ZachBach/aurelius-landing-page/tree/gh-pages",
   "main": "index.js",
   "author": "ZachBach",
   "license": "ISC",

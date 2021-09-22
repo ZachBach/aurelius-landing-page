@@ -1,15 +1,15 @@
-// import './style.css'
-// import * as THREE from 'three'
-import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js'
+import './style.css'
+import * as THREE from 'three'
+// import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js'
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-// import * as dat from 'dat.gui'
+import * as dat from 'dat.gui'
 
 // Texture Loader
 const loader = new THREE.TextureLoader()
-const cross = loader.load('./death-star.png')
+const deathStar = loader.load('./death-star.png')
 
 // Debug
-// const gui = new dat.GUI()
+const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -42,7 +42,7 @@ const material = new THREE.PointsMaterial({
 
 const particlesMaterial = new THREE.PointsMaterial({
     size: 0.005,
-    map: cross,
+    map: deathStar,
     transparent: true,
     color: 'blue'
 })
@@ -82,6 +82,7 @@ window.addEventListener('resize', () =>
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    // renderer.setClearColor(new THREE.Color('#21282a'), 1)
 })
 
 /**
@@ -107,6 +108,19 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+
+// Mouse
+document.addEventListener('mousemove', animateParticles)
+
+let mouseX = 0
+let mouseY = 0
+
+function animateParticles(event) {
+    mouseY = event.clientY
+    mouseX = event.clientX
+}
+
+
 /**
  * Animate
  */
@@ -120,6 +134,12 @@ const tick = () =>
 
     // Update objects
     sphere.rotation.y = .5 * elapsedTime
+    particleMesh.rotation.y = -.1 *elapsedTime
+
+    if (mouseX > 0) {
+        particleMesh.rotation.x = -mouseY * (elapsedTime * 0.00008)
+        particleMesh.rotation.y = -mouseX * (elapsedTime * 0.00008)
+    }
 
     // Update Orbital Controls
     // controls.update()

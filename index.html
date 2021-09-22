@@ -9,12 +9,36 @@
 </head>
 
 <body style="background: black;">
-    <!-- Actual HTML HERE -->
-
+    <div class="container">
+        <div class="content">
+            <h1>Aurelius <br> Dynamic </h1>
+            <p>Solving the world's problems, with Dynamic Technology and Solutions</p>
+        </div>
+    </div>
     <canvas class="webgl"></canvas>
+    <!-- <script>
+
+        const borderContent = CSSRulePlugin.getRule(".content:before")
+        const h1 = document.querySelector('h1')
+        const p = document.querySelector('p')
+        const tl = gsap.timeline()
+
+        tl.from(borderContent, { delay: .5 })
+
+        // tl.from(border, { delay: .5, duration: 4, cssRule: { scaleX: 0 } })
+
+        tl.to(h1, { duration: 2, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: '30px' }, "-=2")
+        tl.to(p, { duration: 4, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: '30px' }, "-=1")
+
+
+    </script> -->
+
+
     <script type="module">
         import * as THREE from 'https://cdn.skypack.dev/three';
         import { OrbitControls } from 'https://cdn.skypack.dev/three/examples/jsm/controls/OrbitControls.js';
+        // import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
+
 
         // Texture Loader
         const loader = new THREE.TextureLoader()
@@ -56,7 +80,7 @@
             size: 0.005,
             map: deathStar,
             transparent: true,
-            color: 'blue'
+            color: 'white'
         })
 
 
@@ -162,8 +186,27 @@
         }
 
         tick()
+
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+        integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/CSSRulePlugin.min.js"
+        integrity="sha512-SuKlyVGK9c7adN5I0qO0zZt1KAXK9WpUguwgH16A3s8Wvrc1X3mum4PS9bI7223Y2v5KBzx3qTCdlVymgF0uWg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="/dist/script.js">
+        import { gsap } from "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js";
+
+        // const content = CSSRulePlugin.getRule(".content:before")
+        // const h1 = document.querySelectorAll('h1')
+        // const p = document.querySelectorAll('p')
+        // const tl = gsap.timeline()
+
+        // tl.from(content, { delay: .5, duration: 4, cssRule: { scaleX: 0 } })
+        // tl.to(h1, { duration: 2, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: '30px' }, "-=2")
+        // tl.to(p, { duration: 4, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: '30px' }, "-=1")</script>
 </body>
 
 </html>

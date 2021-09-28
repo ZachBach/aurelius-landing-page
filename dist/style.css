@@ -55,6 +55,9 @@ h1 {
     text-align: right;
 }
 
+
+
+
 h1, p {
     color: white;
     flex-basis: 0;
@@ -71,7 +74,12 @@ p {
     color: white;
 }
 
-
+.btn {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
     
 
 @media (max-width:480px){

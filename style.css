@@ -95,7 +95,9 @@ html {
 }
 
 * {
+ text-decoration: none;
   box-sizing: border-box;
+  color: black;
 }
 
 svg {
@@ -106,14 +108,15 @@ svg {
 }
 
 #gooey-button {
-  padding: 1rem;
-  font-size: 2rem;
-  border: none;
-  color: #0c1016;
-  filter: url("#gooey");
-  position: relative;
-  background-color: #00FF80;
-  margin-bottom: 20%;
+    z-index: 9999;
+    padding: 1rem;
+    font-size: 2rem;
+    border: none;
+    color: #0c1016;
+    filter: url("#gooey");
+    position: relative;
+    background-color: #00FF80;
+    margin-bottom: 12%;
 }
 #gooey-button:focus {
   outline: none;
@@ -479,8 +482,8 @@ svg {
         font-size: 150%;
         padding-left: 2.5em;
         /* font-family: 'Pacifico', cursive; */
+        
     }
-
     #gooey-button {
         font-size: 15px;
     }

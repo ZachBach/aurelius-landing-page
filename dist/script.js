@@ -36,7 +36,7 @@ const material = new THREE.PointsMaterial({
 })
 
 const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.005,
+    size: 0.003,
     map: deathStar,
     transparent: true,
     color: 'white'

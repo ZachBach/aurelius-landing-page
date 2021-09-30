@@ -12,12 +12,15 @@
 <div class="container">
     <div class="content">
         <h1>Aurelius <br> Dynamic </h1>
-        <p>Solving the world's problems, with Dynamic Technology and Solutions</p>
+
+        <!-- <img src="/dist/Aurelius-3d-draft.png" alt="" style="height: 750px; width: 750px;"> -->
+        <p>Solving the world's problems, with Dynamic Technology and Solutions.</p>
     </div>
 </div>
 
-<button>Find out more</button>
-<canvas class="webgl"></canvas>
+
+
+<canvas class=" webgl"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
     integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -29,17 +32,46 @@
     const border = CSSRulePlugin.getRule('.content:before')
     const h1 = document.querySelector('h1')
     const p = document.querySelector('p')
+    const b = document.querySelector('btn')
     const tl = gsap.timeline()
 
     tl.from(border, { delay: .5, duration: 4, cssRule: { scaleX: 0 } })
 
     tl.to(h1, { duration: 2, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: '30px' }, "-=2")
     tl.to(p, { duration: 4, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: '30px' }, "-=1")
-
-
+    tl.to(b, { duration: 4, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: '30px' }, "-=1")
 </script>
 
 <body>
+    <!-- <button class="btn">Find out more</button> -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+    <button id="gooey-button">
+        Find out more
+        <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </span>
+    </button>
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
         integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="

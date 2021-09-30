@@ -1,5 +1,11 @@
+const btn = document.querySelector('Button')
 
-// Texture Loader
+btn.onclick = function() {
+    window.location.href = "http://www.w3schools.com";
+}
+
+// THREE.js
+// Texture Loaderanvh
 const loader = new THREE.TextureLoader()
 const deathStar = loader.load('./death-star.png')
 
@@ -145,5 +151,7 @@ const tick = () => {
 }
 
 tick()
+
+
 
 

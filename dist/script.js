@@ -1,9 +1,3 @@
-const btn = document.querySelector('Button')
-
-btn.onclick = function() {
-    window.location.href = "http://www.w3schools.com";
-}
-
 // THREE.js
 // Texture Loaderanvh
 const loader = new THREE.TextureLoader()

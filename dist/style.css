@@ -108,7 +108,7 @@ svg {
 }
 
 #gooey-button {
-    z-index: 9999;
+    z-index: 99;
     padding: 1rem;
     font-size: 2rem;
     border: none;
